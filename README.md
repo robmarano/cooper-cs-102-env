@@ -38,7 +38,13 @@ Follow [these instructions on GitHub](https://docs.github.com/en/get-started/get
 After installing Docker Hub and Git on your computers, follow the instructions:
 1. Open a terminal on your computer
 2. Change directory to either "My Documents" on Windows or your home directory on Mac OS
-3. 
+3. Then clone the repo to your computer using the command ```git clone https://github.com/robmarano/cooper-cs-102-env.git```
+4. Change directory into ./cooper-cs-102-env
+5. Build the Docker image with the command ```docker build --rm -f Dockerfile -t ubuntu:cs102-student .```
+6. Run your new Docker image in a container and place in background ```docker run --rm -dit -P --name cs102-student -v ~/:/home/devuser/myHome ubuntu:cs102-student```
+7. Find the Docker container ID using the command ```docker ps```
+8. Login to your new Docker container to being coding ```docker exec -i -t {CONTAINER ID} /bin/bash```
+9. You're ready!
 
 ## Getting Started with Some Key Tools After Installation
 
@@ -48,3 +54,5 @@ We will use Git via GitHub to manage our software (code) repositories (repos). P
 
 #### Some good links
 * [Towards Data Science - Git: The Complete Beginner's Guide](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
+
+
