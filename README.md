@@ -36,15 +36,48 @@ Follow [these instructions on GitHub](https://docs.github.com/en/get-started/get
 #### Configure and Build Your Docker Container 
 
 After installing Docker Hub and Git on your computers, follow the instructions:
-1. Open a terminal on your computer
-2. Change directory to either "My Documents" on Windows or your home directory on Mac OS
-3. Then clone the repo to your computer using the command ```git clone https://github.com/robmarano/cooper-cs-102-env.git```
-4. Change directory into ./cooper-cs-102-env
-5. Build the Docker image with the command ```docker build --rm -f Dockerfile -t ubuntu:cs102-student .```
-6. Run your new Docker image in a container and place in background ```docker run --rm -dit -P --name cs102-student -v ~/:/home/devuser/myHome ubuntu:cs102-student```
+1. Open a terminal on your computer, ```cmd.exe``` on Windows or ```Terminal.app``` or ```iTerm2.app``` on Mac
+2. Change directory to either ```My Documents``` on Windows or your ```${HOME}``` directory on Mac OS. Then create a directory called ```dev``` where we will create sub-directories for projects and code respositories.
+    1. If you are on Mac, run command:
+    ```bash
+    cd ${HOME}
+    mkdir dev
+    cd dev
+    ```
+    2. If you are on Windows, replace %HOMEDRIVE% and %HOMEPATH% with your Windows home directory run command:
+    ```bash
+    cd %HOMEPATH%
+    ```
+3. Then clone the repo to your computer using the command
+```bash
+git clone https://github.com/robmarano/cooper-cs-102-env.git
+```
+4. Change directory into ```./cooper-cs-102-env```
+5. Build the Docker image with the command. See Docker [build manual](https://docs.docker.com/engine/reference/commandline/build/) to decode what the command above does.
+```bash
+docker build --rm -f Dockerfile -t ubuntu:cs102-student .
+```
+
+6. Run your new Docker image in a container and place in background
+    Choose from either option below based upon your OS. See Docker [run manual](https://docs.docker.com/engine/reference/run/) to decode what the command above does.
+    1. If you are on Mac, run command:
+    ```bash
+    docker run --rm -dit -P --name cs102-student \
+    -v ~/:/home/devuser/myHome ubuntu:cs102-student
+    ```
+    2. If you are on Windows, replace %HOMEDRIVE% and %HOMEPATH% with your Windows home directory run command:
+    ```bash
+    docker run --rm -dit -P --name cs102-student \
+    -v --security-opt seccomp=unconfined \
+    --mount type=bind,source="%HOMEDRIVE%%HOMEPATH%\Documents",destination=/home/devuser/myHome ubuntu:cs102-student
+    ```
 7. Find the Docker container ID using the command ```docker ps```
 8. Login to your new Docker container to being coding ```docker exec -i -t {CONTAINER ID} /bin/bash```
-9. You're ready!
+9. Update your ```.gitconfig``` file with your full name and email address that you use on GitHub:
+```bash
+vim ~/.gitconfig
+```
+10. You're ready!
 
 ## Getting Started with Some Key Tools After Installation
 
@@ -53,6 +86,9 @@ After installing Docker Hub and Git on your computers, follow the instructions:
 We will use Git via GitHub to manage our software (code) repositories (repos). Please create an account on [GitHub.com](https://www.github.com) and share your account details with [Prof. Marano via email](mailto:rob@cooper.edu). You will find his GitHub profile [here](https://github.com/robmarano).
 
 #### Some good links
+* [Learn Vim For the Last Time: A Tutorial and Primer](https://danielmiessler.com/study/vim/)
+* [Docker Basics](https://docker-curriculum.com/)
+* [6 Docker Basics You Should Completely Grasp When Getting Started](https://vsupalov.com/6-docker-basics/)
 * [Towards Data Science - Git: The Complete Beginner's Guide](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
-
+* [Rob Reiter's Learn-C.org](https://www.learn-c.org/)
 

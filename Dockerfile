@@ -26,12 +26,8 @@ RUN echo "devuser:Cooper1859!" | chpasswd
 RUN usermod -aG sudo devuser
 # create your C development directory called /home/devuser/dev/c
 USER devuser
-RUN mkdir -p /home/devuser/dev/c
-ADD --chown=devuser:devuser ./README.md /home/devuser/CS-102-README.md
 WORKDIR /home/devuser
+ADD --chown=devuser:devuser ./README.md /home/devuser/CS-102-README.md
 # configure YOUR GitHub credentials
 ADD --chown=devuser:devuser ./etc/.gitconfig /home/devuser/.gitconfig
-#ADD ~/dev/cooper /home
-#CMD ["bash"]
-ADD --chown=devuser:devuser . /home/devuser/dev/docker
 SHELL ["/bin/bash", "-c"]
