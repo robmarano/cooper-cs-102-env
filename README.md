@@ -100,7 +100,7 @@ docker container kill CONTAINER_ID
 ```
 ### Delete the container
 ```bash
-docker container m CONTAINER_ID
+docker container rm CONTAINER_ID
 ```
 ### Delete the image
 ```bash
