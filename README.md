@@ -66,7 +66,7 @@ docker build --rm -f Dockerfile -t ubuntu:cs102-student .
     ```
     2. If you are on Windows, replace %HOMEDRIVE% and %HOMEPATH% with your Windows home directory run command:
     ```bash
-    docker run --rm -dit -P --name cs102-student -v --security-opt seccomp=unconfined --mount type=bind,source="%HOMEDRIVE%%HOMEPATH%\Documents",destination=/home/devuser/myHome ubuntu:cs102-student
+    docker run --rm -dit -P --name cs102-student --security-opt seccomp=unconfined --mount type=bind,source="%HOMEDRIVE%%HOMEPATH%\Documents",destination=/home/devuser/myHome ubuntu:cs102-student
     ```
 7. Find the Docker container ID using the command ```docker ps```
 8. Login to your new Docker container to being coding ```docker exec -i -t {CONTAINER ID} /bin/bash```
