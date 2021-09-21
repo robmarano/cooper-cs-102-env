@@ -89,3 +89,26 @@ We will use Git via GitHub to manage our software (code) repositories (repos). P
 * [Towards Data Science - Git: The Complete Beginner's Guide](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 * [Rob Reiter's Learn-C.org](https://www.learn-c.org/)
 
+## To remove the Docker container and image
+### Stop the container
+```bash
+docker ps
+```
+Copy the ```CONTAINER_ID```
+```bash
+docker container kill CONTAINER_ID
+```
+### Delete the container
+```bash
+docker container m CONTAINER_ID
+```
+### Delete the image
+```bash
+docker image ls
+```
+Take the ```IMAGE_ID``` of the image for cs102-student
+```bash
+docker image rm IMAGE_ID
+```
+
+To recreate and run a new container, start from the top of this page.
