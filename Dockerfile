@@ -33,8 +33,8 @@ ADD --chown=devuser:devuser ./etc/.gitconfig /home/devuser/.gitconfig
 # add the pre-existing SSH files for your access to your GitHub account
 # ensure you have in your host computer under C:\Users\YOURNAME\Documents\ssh in Windows or /Users/YOURNAME/ssh
 RUN mkdir -p /home/devuser/.ssh
-ADD --chown=devuser:devuser ../../ssh/id_ed25519 /home/devuser/.ssh/id_ed25519
-ADD --chown=devuser:devuser ../../ssh/id_ed25519.pub /home/devuser/.ssh/id_ed25519.pub
+ADD --chown=devuser:devuser ./ssh/id_ed25519 /home/devuser/.ssh/id_ed25519
+ADD --chown=devuser:devuser ./ssh/id_ed25519.pub /home/devuser/.ssh/id_ed25519.pub
 RUN chmod 400 /home/devuser/.ssh/id_ed25519
 RUN chmod 400 /home/devuser/.ssh/id_ed25519.pub
 SHELL ["/bin/bash", "-c"]
