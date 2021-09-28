@@ -27,6 +27,7 @@ RUN usermod -aG sudo devuser
 # create your C development directory called /home/devuser/dev/c
 USER devuser
 WORKDIR /home/devuser
+ADD --chown=devuser:devuser ./etc/vimrc /home/devuser/.vimrc
 ADD --chown=devuser:devuser ./README.md /home/devuser/CS-102-README.md
 # configure YOUR GitHub credentials
 ADD --chown=devuser:devuser ./etc/.gitconfig /home/devuser/.gitconfig

@@ -1,4 +1,4 @@
-Version: 1.1
-New Features: None
+Version: 1.2
+New Features: Added .vimrc to ~/ for improved vim experience
 New Fixes: None
-Issues: DO NOT FORGET TO UPDATE $HOME/.gitconfig with your Full Name and your Email Address used for your GitHub account
+Issues: None
