@@ -47,6 +47,8 @@ After installing Docker Hub and Git on your computers, follow the instructions:
     2. If you are on Windows, replace %HOMEDRIVE% and %HOMEPATH% with your Windows home directory run command:
     ```bash
     cd %HOMEPATH%
+    mkdir dev
+    cd dev
     ```
 3. Then clone the repo to your computer using the command
 ```bash
