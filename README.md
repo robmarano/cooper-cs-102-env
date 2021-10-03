@@ -55,7 +55,8 @@ After installing Docker Hub and Git on your computers, follow the instructions:
 git clone https://github.com/robmarano/cooper-cs-102-env.git
 ```
 4. Change directory into ```./cooper-cs-102-env```
-5. Build the Docker image with the command. See Docker [build manual](https://docs.docker.com/engine/reference/commandline/build/) to decode what the command above does.
+5. Update your full name and email address in the file ```etc/.gitconfig```
+6. Build the Docker image with the command. See Docker [build manual](https://docs.docker.com/engine/reference/commandline/build/) to decode what the command above does.
 ```bash
 docker build --rm -f Dockerfile -t ubuntu:cs102-student .
 ```
