@@ -77,7 +77,7 @@ docker build --rm -f Dockerfile -t ubuntu:cs102-student .
     2. Follow the instructions to add the keys to your GitHub account [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 11. Save your keys to your host computer from your Linux container
 ```bash
-cd ~ && cp -r ./.ssh ~/myHome/ssh && ~/myHome/dev/cooper-cs-102-env.git/ssh
+cd ~ && cp -r ./.ssh ~/myHome/ssh && ~/myHome/dev/cooper-cs-102-env/ssh
 ```
 12. Exit your Linux container
 13. Kill your container
