@@ -8,7 +8,7 @@ ADD --chown=root:root ./etc/issue /etc/issue
 # update your instance of Ubuntu server
 RUN apt update && apt upgrade -y
 # install essential C development tools
-RUN apt install -y --force-yes build-essential manpages-dev sudo curl git-core vim wget
+RUN apt install -y --force-yes build-essential gdb manpages-dev man-db sudo curl git-core vim wget
 # allow devuser to have superuser/root privileges
 RUN apt install -y --force-yes sudo
 ADD --chown=root:root ./etc/sudoers /etc/sudoers
