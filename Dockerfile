@@ -1,6 +1,9 @@
 FROM ubuntu:focal
 LABEL maintainer="Prof. Rob Marano <rob@cooper.edu>"
 ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN yes | unminimize
 # add our course's global bashrc file
 ADD --chown=root:root ./etc/bash.bashrc /etc/bash.bashrc
 ADD --chown=root:root ./etc/motd /etc/motd
@@ -24,6 +27,12 @@ RUN adduser \
 # configure your local "devuser"
 RUN echo "devuser:Cooper1859!" | chpasswd
 RUN usermod -aG sudo devuser
+#  Add new user docker to sudo group
+RUN adduser devuser sudo
+# Ensure sudo group users are not 
+# asked for a password when using 
+# sudo command by ammending sudoers file
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # create your C development directory called /home/devuser/dev/c
 USER devuser
 WORKDIR /home/devuser
