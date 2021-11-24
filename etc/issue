@@ -1,4 +1,4 @@
-Version: 1.4
-New Features: Added ncurses
+Version: 1.5
+New Features: Added tmux (see https://tmuxcheatsheet.com/)
 New Fixes: None
 Issues: None
