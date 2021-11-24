@@ -12,6 +12,9 @@ ADD --chown=root:root ./etc/issue /etc/issue
 RUN apt update && apt upgrade -y
 # install essential C development tools
 RUN apt install -y --force-yes build-essential gdb manpages-dev man-db sudo curl git-core vim wget
+# install terminal multiplexer to have multiple terminals in one session
+# https://tmuxcheatsheet.com/
+RUN apt install -y tmux
 # install ncurses for development
 RUN apt install -y libncurses-dev
 # allow devuser to have superuser/root privileges
