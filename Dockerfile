@@ -17,6 +17,8 @@ RUN apt install -y --force-yes build-essential gdb manpages-dev man-db sudo curl
 RUN apt install -y tmux
 # install ncurses for development
 RUN apt install -y libncurses-dev
+# install SDL graphics for development
+RUN apt-get install -y libsdl2-2.0 libsdl2-dev libsdl2-image-2.0-0 libsdl2-image-dev
 # allow devuser to have superuser/root privileges
 RUN apt install -y --force-yes sudo
 ADD --chown=root:root ./etc/sudoers /etc/sudoers
